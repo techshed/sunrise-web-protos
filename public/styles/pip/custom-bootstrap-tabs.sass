@@ -1,0 +1,59 @@
+// Custom bootstrap tabs
+// ---------------------
+.nav-tabs > li > a
+  background: $lighter-gray
+
+.nav-pills
+
+  li > a
+    border: 1px solid lighten($brand-secondary, 60%)
+    color: $brand-secondary
+    z-index: 1
+    margin-left: 0
+    border-radius: 0
+
+  li:first-child > a
+    border-radius: 0
+    margin-left: 0
+
+  li:last-child > a
+    border-radius: 0
+
+  li.active > a
+    background: none
+    border: 1px solid $brand-primary
+    color: $brand-primary
+    z-index: 2
+
+    &:hover
+      background: none
+      color: $brand-primary
+
+.tab-content
+  padding: 20px
+  background: $white
+
+.nav-justified
+
+  a
+    white-space: nowrap
+
+// Re-style boostrap defaults
+// --------------------------
+.progress
+  margin-bottom: 10px
+
+  .progress-bar
+    color: #444
+
+@media (min-width: $screen-sm-min)
+
+  .nav-pills
+    li > a
+      margin-left: -1px
+
+    li:first-child > a
+      border-radius: 6px 0 0 6px
+
+    li:last-child > a
+      border-radius: 0 6px 6px 0

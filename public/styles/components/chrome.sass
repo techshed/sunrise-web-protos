@@ -1,0 +1,48 @@
+// Chrome
+// ------
+// the titled spacer between product and occupation areas
+.Chrome
+  font-family: $helvetica-bold
+  border-bottom: $border
+
+.Chrome-title
+  font-size: 20px
+  margin: 0
+  padding: 5px 10px
+
+.Chrome-titleAction
+  font-size: 14px
+  margin-left: 10px
+  color: $brand-primary
+  font-family: $helvetica
+  white-space: nowrap
+
+.Chrome-buttonGroup
+  margin-top: 18px
+
+.Chrome-buttonGroup-button
+  background-color: transparent
+  padding: 6px 20px
+  color: $gray
+
+// Chrome--mini
+// -----------
+// smaller version of the standard chrome
+.Chrome--mini
+  background-color: $lighter-gray
+  font-family: $helvetica-bold
+  font-size: $font-size-large
+  border-top: $border
+  border-bottom: $border
+  padding: 10px 20px
+
+@media (min-width: $screen-sm-min)
+
+  .Chrome
+    border-bottom: none
+
+  .Chrome-title
+    font-size: 24px
+    margin-top: 20px
+    margin-bottom: 10px
+    padding: 0

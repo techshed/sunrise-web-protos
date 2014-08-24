@@ -1,0 +1,140 @@
+@import "header.dropdown"
+@import "icons"
+@import "accountMenu"
+@import "categoryDropdown"
+
+// Header
+/* ------ */
+// fluid Header for desktop version
+/* ------- */
+
+$logo-url: "../images/HD-logo.png"
+$logo-retina-url: "../images/HD-logo-retina.png"
+$logo-width: 118px
+$logo-height: 40px
+$logo-padding:  5px 10px
+$padding-container: 16px 10px 0
+$list-item-spacer: 15px
+
+
+// Header
+// ------
+// needed to keep AccountMenu slide out hidden
+.Header
+  width: 100%
+
+.Header
+  position: fixed
+  width: 100%
+  z-index: 99
+
+
+// Header components vertical
+// --------------------------
+.Header-top
+  background-color: $brand-secondary
+
+.Header-bottom
+  background-color: $white
+  border-bottom: $border
+  position: relative
+
+.Header-top,
+.Header-bottom
+  height: $Header-row-height
+
+
+// Header top
+// ----------
+.Header-logo
+  padding: $logo-padding
+  width: $browse-width
+  border-right: $border-gray
+
+.Header-logo-img
+  @include img-retina($logo-url, $logo-retina-url, $logo-width, $logo-height)
+  width: $logo-width
+  height: $logo-height
+  background-repeat: no-repeat
+
+
+.Header-fulfillment
+  border-right: $border-gray
+  height: $Header-row-height
+  font-weight: bold
+  font-size: $font-size-medium
+  width: $store-width
+
+
+.Header-tools
+  height: $Header-row-height
+
+  .dropdown-menu
+    width: $base-width
+
+  .list-item
+    height: $Header-row-height
+    padding: $padding-container
+    cursor: pointer
+
+  .fa.pull-right
+    margin-left: 10px
+
+.Header-toolsList
+  padding: 0
+
+  .list-item
+    color: $white
+    display: inline-block
+    margin-left: $list-item-spacer
+    vertical-align: top
+
+
+.Header-login
+  width: $login-width
+  height: $Header-row-height
+  font-size: 14px
+  color: $white
+  position: relative
+  overflow: hidden
+
+
+// Header bottom
+// -------------
+.Header-category
+  height: $Header-row-height
+  width: $browse-width
+  border-right: $border
+  color: $brand-primary
+
+  .dropdown
+    @extend .u-fillParent
+    padding: $padding-container
+
+.Header-search
+  max-width: 500px
+  margin: 0 ($cart-width + 10px) 0 160px
+  padding: 7px 7px 0
+
+  // override bootstrap default
+  .form-control,
+  form
+    margin: 0
+
+.Header-cart
+  width: $cart-width
+  height: $Header-row-height
+  position: absolute
+  right: 0
+  top: 0
+  padding: 14px 10px 0
+  color: $brand-primary
+  font-size: 16px
+  text-align: center
+  border-left: $border
+
+  &:hover
+    color: $white
+    background-color: $brand-primary
+    cursor: pointer
+    border-left: $border-white

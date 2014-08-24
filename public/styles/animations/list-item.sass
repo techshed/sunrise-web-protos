@@ -1,0 +1,12 @@
+//
+// List item animation
+//
+.a-listItem
+
+  // each extended animation sets transition-property themselves,
+  // we need to declare it here prevent them overriding each other
+  +transition-property(opacity, transform)
+
+.a-listItem.ng-enter-stagger
+  /* 80ms will be applied between each sucessive enter operation */
+  +transition-delay(80ms)

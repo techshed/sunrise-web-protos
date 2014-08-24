@@ -1,0 +1,49 @@
+// MobileNav
+/* ---------- */
+// structural rules for the mobile nav visble on responsive view
+/* ---------- */
+
+$pane-distance: 90%
+$bg-color: #333
+$transition: all 0.3s ease
+
+.Body
+  overflow-x: hidden
+  position: relative
+  // needed to ensure a smooth animation for the body content
+  left: 0
+
+.Body--right
+  left:  ($pane-distance)
+
+.Body--left
+  left: - ($pane-distance)
+
+.SlidePane
+  background: $bg-color
+  position: fixed
+  width: $pane-distance
+  top: 0
+  z-index: 1000
+  height: 100%
+
+.MenuPane
+  @extend .SlidePane
+  left: - ($pane-distance)
+
+.CartPane
+  @extend .SlidePane
+  right: - ($pane-distance)
+
+.MenuPane--shown
+  left: 0
+
+.CartPane--shown
+  right: 0
+
+// transition
+.Body,
+.SlidePane
+  -webkit-transition: $transition
+  -moz-transition: $transition
+  transition: $transition

@@ -1,0 +1,93 @@
+// CategoryCard
+// ------------
+// the individual category cards
+.CategoryCard
+  background-color: $white
+  margin-top: 0px
+  border: none
+
+.CategoryCard-title
+  height: 80px
+  padding: 0
+  font-size: $font-size-large
+  min-height: 48px
+  border-bottom: $border
+
+
+  &:hover
+    @extend .u-orangeHover
+
+.CategoryCard-link
+  text-decoration: none
+  display: block
+  padding: 25px 10px 25px 80px
+  color: #333
+
+  .fa-chevron-right
+    color: $gray
+    margin-top: 6px
+
+  &:hover
+    color: $white
+
+  &:hover, &:visited, &:link
+    text-decoration: none
+
+.CategoryCard-resp-image
+  margin-bottom: 10px
+  height: 60px
+  width: auto
+  position: absolute
+  left: 10px
+  top: 10px
+
+.CategoryCard-image
+  padding: 15px
+  position: absolute
+  top: 0
+  left: 0
+
+.CategoryCard-subcategories
+  position: relative
+
+.CategoryCard-list-container
+  padding: 0
+  margin-left: 160px
+  min-height: 159px
+
+.CategoryCard-list
+  list-style: none
+  padding-left: 0
+  margin: 0
+
+  li
+    border-bottom: $border
+
+    &:hover
+      @extend .u-orangeHover
+
+    &:last-child
+      border: none
+
+@media (min-width: $screen-sm-min)
+  .CategoryCard
+    border: $border
+    margin-top: 20px
+
+    &:first-child
+      margin-top: 0
+
+  .CategoryCard-title
+    padding: 0 5px
+    font-size: 20px
+    height: auto
+
+  .CategoryCard-link
+    padding: 10px 10px 10px 10px
+
+@media (min-width: $screen-md-min)
+
+  .CategoryCard
+    border: none
+    border-right: $border
+    margin-top: 0

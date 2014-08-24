@@ -1,0 +1,60 @@
+// Specification styles
+// --------------------
+.Specification
+  padding: 0
+
+  .row
+    padding: 10px 0
+
+.Specification-leftColumn,
+.Specification-rightColumn
+  .row
+    margin-right: -15px
+    margin-left: -15px
+
+.Specification--alternate
+
+  .row
+    background: none
+
+.Specification-leftColumn,
+
+  .row
+    background: $lighter-gray
+
+.Specification-label
+  font-weight: bold
+
+.Specification-showMore
+  padding: 10px 0
+  text-align: center
+
+.SafetyFiles
+  padding: 0
+  margin: 0
+  list-style: none
+
+  li
+    margin: 10px 0
+
+@media (min-width: $screen-sm-min)
+
+  .Specification-leftColumn
+
+    .row
+      margin-right: 2%
+
+  .Specification-rightColumn
+
+    .row
+      margin-left: 2%
+
+  .Specification--alternate
+
+    .row
+      background: $lighter-gray
+
+    .Specification-leftColumn
+
+      .row
+        background: none

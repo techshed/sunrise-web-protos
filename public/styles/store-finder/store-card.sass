@@ -1,0 +1,62 @@
+// StoreCard
+// ---------
+// the individual card inside the store list
+
+.StoreCard
+  position: relative
+  background-color: $white
+  border: $border
+  border-top: none
+  padding: 10px
+
+.StoreCard-check
+  position: absolute
+  top: $check-icon-spacer
+  right: $check-icon-spacer + 5px
+  color: $green
+
+.StoreCard-check--mobile
+  color: $green
+  margin-left: $check-icon-spacer
+  display: inline-block
+  font-size: 14px
+
+.StoreCard-chevron
+  position: absolute
+  top: 20px
+  right: 10px
+  font-size: 20px
+  color: $lighter-gray
+
+.StoreCard-marker
+  position: absolute
+  top: 0
+  left: 0
+  height: 100%
+  width: 10px
+  background-color: $brand-primary
+
+.StoreCard-distance
+  display: block
+  color: $gray
+
+.StoreCard-title
+  margin: 0
+  font-size: $font-size-medium
+
+
+@media (min-width: $screen-sm-min)
+  .StoreCard
+    padding: 20px
+
+  .StoreCard-check--mobile
+    display: none
+
+  .StoreCard-distance
+    display: inline
+    margin-left: 5px
+    font-size: 14px
+
+  .StoreCard-title
+    margin: 0
+    font-size: 20px

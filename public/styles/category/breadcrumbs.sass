@@ -1,0 +1,42 @@
+// Breadcrumbs
+// -----------
+// component for the previously selected categories
+.Breadcrumbs
+  +make-xs-column(12)
+  padding: 0
+
+.Breadcrumbs-list
+  padding-left: 0
+  margin-bottom: 0
+  cursor: pointer
+
+.Breadcrumbs-item
+  @extend .CategoryList-item
+  background-color: $brand-primary
+  color: $white
+
+.Breadcrumbs-itemTitle
+  @extend .CategoryList-itemTitle
+
+
+@media (min-width: $screen-sm-min)
+  .Breadcrumbs
+    border: none
+    width: 100% !important
+
+  .Breadcrumbs-list
+    margin: 20px 0
+    min-height: 35px
+
+  .Breadcrumbs-item
+    display: inline-block
+    background-color: transparent
+    color: $black
+    border: none
+    padding: 0
+
+    .fa-chevron-right
+      font-size: $chevron-font-size
+      vertical-align: middle
+      padding: 0 5px
+      line-height: 16px

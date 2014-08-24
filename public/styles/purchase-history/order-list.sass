@@ -1,0 +1,34 @@
+// OrderList uses the custom list-group class for styling
+.OrderList
+  height: 100%
+  overflow-y: scroll
+  padding-right: 0
+
+.OrderListItem
+  padding: 0
+  height: 13% !important
+
+.OrderListItemContent
+  display: block !important
+
+  &:hover
+    cursor: pointer
+
+.OrderListItemContent-subtext
+  color: $gray
+
+.OrderListItemContent-toggle
+  text-align: right
+
+.OrderListItemContent-chevron
+  position: absolute
+  top: 14px
+  right: 14px
+  font-size: 20px
+  color: $lighter-gray
+
+@media (min-width: $screen-sm-min)
+  .OrderList
+    padding-right: 50px
+    height: auto
+    overflow-y: visible

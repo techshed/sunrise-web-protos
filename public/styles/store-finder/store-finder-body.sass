@@ -1,0 +1,55 @@
+// StoreFinder body
+// ----------------
+// on responsive view, occupies 200% of the screen
+// to allow slide action to reveal details
+// XXX todo (Ben): swap this action for animate.css once integrated
+
+.StoreFinder-body
+  -webkit-transform: translate3d( 0%, 0, 0 )
+  -webkit-transition: -webkit-transform .25s ease-in-out
+  width: 200%
+  overflow: hidden
+  position: relative
+
+.StoreFinder-body--detailsShown
+  -webkit-transform: translate3d( -50%, 0, 0 )
+  -webkit-transition: -webkit-transform .25s ease-in-out
+
+
+// StoreFinder details
+// -------------------
+// the container that holds the enhanced store details
+
+.StoreFinder-details
+  width: 50%
+
+
+// StoreFinder map
+// ---------------
+// the map area showing the overview or current store location
+
+.StoreFinder-mapImage
+  width: 100%
+  border: $border
+  background-color: $white
+  min-height: $min-map-height-sm
+  margin-left: -1px
+  border-top: none
+  display: block
+
+
+@media (min-width: $screen-sm-min)
+  .StoreFinder-body
+    width: auto
+    overflow: initial
+    position: initial
+
+
+@media (min-width: $screen-md-min)
+  .StoreFinder-mapImage
+    min-height: $min-map-height-md
+
+
+@media (min-width: $screen-lg-min)
+  .StoreFinder-mapImage
+    min-height: $min-map-height-lg

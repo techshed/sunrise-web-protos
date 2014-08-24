@@ -1,0 +1,39 @@
+.SearchBox
+  position: static
+
+.SearchBox-suggestions.form-control
+  position: absolute
+  z-index: 10
+  width: auto
+  height: auto
+  left: 0
+  right: 0
+  border-top: none
+  box-shadow: none
+  margin-top: 8px
+  border-radius: 0
+  padding: 0 15px
+
+.Suggestion
+  padding: 11px 13px
+  color: #333
+  margin: 0 -13px
+  cursor: pointer
+  border-top: 1px solid $border-gray
+
+  &:hover
+    background: $light-gray
+
+.Suggestion--selected
+  background: $light-gray
+
+
+@media (min-width: $screen-sm-min)
+
+  .SearchBox
+    position: relative
+
+  .SearchBox-suggestions.form-control
+    width: 100%
+    margin-top: -6px
+    border-radius: 0 0 4px 4px

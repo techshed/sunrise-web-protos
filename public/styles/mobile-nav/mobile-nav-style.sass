@@ -1,0 +1,106 @@
+// MobileNav
+/* ---------- */
+// visual styles for the mobile navbar
+/* ---------- */
+
+$nav-padding-hoz: 10px
+$nav-button-size: 50px
+$nav-padding-top: 7px
+
+.MobileNav
+  border-bottom: $border
+  height: $nav-button-size
+  background-color: $brand-secondary
+  padding-top: $nav-padding-top
+  position: fixed
+  z-index: 99
+  width: 100%
+
+.MobileNav-menuButton
+  width: $nav-button-size
+  padding-left: $nav-padding-hoz
+  float: left
+
+.MobileNav-closeButton
+  width: $nav-button-size
+  padding-left: $nav-padding-hoz
+  float: left
+
+.MobileNav-search
+  margin: 0 $nav-button-size
+  padding-left: $nav-padding-hoz
+  padding-right: $nav-padding-hoz
+
+.MobileNav-title
+  color: white
+  margin: 0 $nav-button-size
+  padding-left: $nav-padding-hoz
+  padding-right: $nav-padding-hoz
+
+  h4
+    text-align: center
+    color: inherit
+    font-family: $helvetica-bold
+
+.MobileNav-cartButton
+  position: absolute
+  top: 0
+  right: 0
+  width: $nav-button-size
+  padding-right: $nav-padding-hoz
+  padding-top: 7px
+  text-align: right
+
+.MobileNav-cartIcon,
+.MobileNav-menuIcon,
+.MobileNav-closeIcon
+  color: $white
+  height: 35px
+  font-size: 30px
+  background-color: transparent
+  border: none
+  padding: 0
+
+
+
+// CartPane
+// --------
+//
+
+.CartPane-title
+  color: $white
+
+
+
+// MenuPane
+// --------
+//
+
+.MenuPane
+  border-right: 1px solid $gray
+
+.MenuPane-accountArea
+  padding-left: 20px
+  margin-top: 20px
+
+.MenuPane-accountTitle
+  color: $white
+
+.MenuPane-accountLink
+  color: $brand-primary
+
+  &:hover
+    cursor: pointer
+
+.MenuPane-list
+  // needed to override default ul behavior
+  padding: 20px 0 0 20px
+
+.MenuPane-listItem
+  padding: 12px 12px 12px 0
+
+  a
+    text-decoration: none
+    color: $white
+    font-size: 18px
+    font-family: $helvetica-bold

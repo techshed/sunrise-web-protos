@@ -1,0 +1,13 @@
+// CategoryProduct-container
+// --------------------------
+// container for the two category product areas
+.CategoryProducts
+  +make-xs-column(12)
+  +make-sm-column(9)
+  +make-md-column(9)
+  margin-top: 0
+
+
+@media (min-width: $screen-sm-min)
+  .CategoryProducts
+    margin-top: $CategoryProducts-marginTop

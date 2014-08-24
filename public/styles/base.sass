@@ -1,0 +1,45 @@
+// Base
+/* ---- */
+// generic rules for base index */
+/* ---- */
+
+$spacer-size: 100px
+$content-min-height: 500px
+$form-error-font-color: #a94442
+$form-label-font-size: 16px
+$form-input-font-size: 20px
+$form-error-font-size: 12px
+
+html, body
+  height: 100%
+
+html
+  overflow-y: scroll
+
+.Body
+  background-color: $lighter-gray
+  min-height: 100%
+  position: relative
+
+.ViewTarget
+  padding-top: $Header-row-height
+  padding-bottom: $footer-height-responsive
+
+.AdSpacer
+  height: $spacer-size
+
+
+// Small tags under headers should act like sub headers
+h1, h2, h3, h4, h5, h6
+
+  small
+    margin-top: 10px
+
+a
+  cursor: pointer
+
+@media (min-width: $screen-sm-min)
+
+  .ViewTarget
+    padding-top: (2 * $Header-row-height) + 10
+    padding-bottom: $footer-height

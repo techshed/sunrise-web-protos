@@ -1,0 +1,52 @@
+//
+// Order Details Panel
+//
+$product-list-min-height: 150px
+$product-list-max-height: 380px
+
+.OrderDetails
+  background-color: $white
+  padding: 0
+
+.OrderDetails-header
+  padding: $grid-gutter-width/3
+  padding-top: 0
+  border: $border
+  min-height: 80px
+
+.OrderDetails-products
+  min-height: $product-list-min-height
+  max-height: $product-list-max-height
+  overflow-y: auto
+  overflow-x: hidden
+  border-left: $border
+  border-right: $border
+
+.OrderDetails-footer
+  padding: $grid-gutter-width/2
+  border: $border
+
+.ReceiptButton
+  float: right
+  color: $brand-primary
+  border-color: $brand-primary
+  background: none
+  margin-top: $grid-gutter-width/2
+
+  &:hover
+    color: $black
+    border-color: $black
+    background: none
+
+.AddAllButton
+  position: relative
+
+.AddAllButton-price
+  position: absolute
+  left: $grid-gutter-width/2
+  top: $grid-gutter-width/3
+  color: $white
+  background-color: orange
+  border-radius: $border-radius-base
+  padding: 3px 10px
+  margin: -3px -9px

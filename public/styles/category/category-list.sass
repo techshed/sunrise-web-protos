@@ -1,0 +1,40 @@
+// CategoryList
+// ----------------------
+// component that hold the current subcategories
+.CategoryList
+  +make-sm-column(3)
+  +make-md-column(3)
+  margin: 0 -15px !important
+
+.CategoryList-list
+  @include box-shadow(0px 0px 0px 1px #ccc inset)
+  list-style: none
+  border-top: $border
+  padding: 0
+  margin-bottom: 0
+  min-height: $CategoryList-item-minHeight
+  background-color: $white
+  cursor: pointer
+
+.CategoryList-title
+  font-family: $helvetica-bold
+  min-height: $title-min-height
+  margin-bottom: 10px
+
+.CategoryList-item
+  border: $border
+  border-top: none
+  background-color: $white
+  padding: 5px 10px
+  white-space: normal
+
+.CategoryList-itemTitle
+  font-size: 16px
+
+
+@media (min-width: $screen-sm-min)
+  .CategoryList
+    margin-right: 0 !important
+
+  .CategoryList-itemTitle
+    font-size: $font-size-base

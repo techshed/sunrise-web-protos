@@ -1,0 +1,153 @@
+// vars
+$stepper-size: 45px
+$stepper-button-padding: 15px
+$stepper-border-radius: 3px
+
+$AddBtn-circle-size: 30px
+
+
+
+// AddBtn
+// ------
+// add button on the products
+.AddButton
+  color: $brand-primary
+  font-family: $helvetica
+  background-color: $white
+  border: none
+  border-radius: 3px
+  padding: 7px
+  height: 34px
+
+  @media (min-width: $screen-md-min)
+    max-width: 250px
+    margin-left: auto
+    margin-right: auto
+
+  &:hover
+    color: $white
+    background-color: $brand-primary
+
+  i.fa-shopping-cart
+    margin-right: 10px
+    font-size: 24px
+    vertical-align: middle
+
+.AddButton-steppers
+  position: relative
+
+  @media (min-width: $screen-md-min)
+    max-width: 200px
+    margin-left: auto
+    margin-right: auto
+
+.AddButton-loading
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  background: rgba(255, 255, 255, 0.9)
+  text-align: center
+  line-height: 32px
+  z-index: 1
+
+.AddButton-step
+  background-color: $brand-primary
+  color: $white
+  padding-left: $stepper-button-padding
+  padding-right: $stepper-button-padding
+  border-radius: $stepper-border-radius
+  width: 100%
+
+.AddButton-step-minus
+  float: left
+  width: $stepper-size
+
+.AddButton-step-plus
+  position: absolute
+  right: 0
+  top: 0
+  width: $stepper-size
+
+.AddButton-step-amount
+  padding: 0 5px
+  margin: 0 $stepper-size
+
+  input
+    text-align: center
+    width: 100%
+    border-color: $brand-primary
+    color: $brand-primary
+
+.PlpCartBtn
+  @extend .AddButton
+  padding: 0 7px
+  position: absolute
+  left: 0
+  bottom: 0
+  right: 0
+  height: 100%
+  transition-property: visibility, opacity
+  transition-duration: 0.3s, 0.2s
+  transition-timing-function: linear, linear
+  transition-delay: 0.2s, 0.2s
+  visibility: visible
+  opacity: 1
+
+
+.AddToCardButton
+  height: 35px
+  position: relative
+
+.AddToCardButton--big
+  margin-top: 40px
+  margin-bottom: 20px
+  font-size: 18px
+  height: auto
+
+  input, .btn
+    height: 40px
+    font-size: 18px
+
+  .AddButton
+    background: #f96302
+    color: #fff
+    height: 40px
+
+
+.AddToCardButton:hover, .ProductCard:hover, .AddToCardButton--noCover
+  .PlpCartBtn
+    visibility: hidden
+    opacity: 0
+
+.AddToCardButton-fulfillmentOptions
+  margin-bottom: 10px
+
+.AddButton-circle
+  border: 1px solid $brand-primary
+  width: $AddBtn-circle-size
+  height: $AddBtn-circle-size
+  margin-right: 5px
+  border-radius: $AddBtn-circle-size
+  line-height: 28px
+  display: inline-block
+
+// block spinners on input fields
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button
+  -webkit-appearance: none
+  margin: 0
+
+// Home depot button
+// -----------------
+// placeholder hd button
+.btn-hd
+  color: $white
+  font-family: $helvetica-bold
+  background-color: $brand-primary
+
+.btn-de-emphasized
+  background-color: $white
+  border: 1px solid $brand-primary
+  color: $brand-primary

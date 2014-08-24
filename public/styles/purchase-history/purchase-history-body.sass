@@ -1,0 +1,17 @@
+// Purchase History Body
+// ---------------------
+// on responsive view, occupies 200% of the screen
+// to allow slide action to reveal details
+
+.PurchaseHistory-body
+  +transition-transform(.25s ease-in-out)
+  +translate(0, 0)
+  width: 200%
+
+.PurchaseHistory-body--detailsShown
+  +translate(-50%, 0)
+
+@media (min-width: $screen-sm-min)
+
+  .PurchaseHistory-body
+    width: auto

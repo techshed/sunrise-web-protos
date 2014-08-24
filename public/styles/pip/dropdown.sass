@@ -1,0 +1,23 @@
+$list-dropdown-size: 250px
+$list-dropdown-net-size: $list-dropdown-size - 40px
+$list-dropdown-input-size: $list-dropdown-net-size * 0.65
+$list-dropdown-button-size: $list-dropdown-net-size - $list-dropdown-input-size
+
+.ListDropdown-checkIcon
+  color: $brand-primary
+
+.ListDropdown-menu
+  width: 100%
+
+  @media (min-width: $screen-sm-min)
+    width: $list-dropdown-size
+
+
+
+.ListDropdown-newListInput
+  width: $list-dropdown-input-size
+  float: left
+
+.ListDropdown-newListButton
+  width: $list-dropdown-button-size
+  float: right

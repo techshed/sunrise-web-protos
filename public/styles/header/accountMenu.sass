@@ -1,0 +1,38 @@
+// Account menu slide out
+// ----------------------
+
+$AccountMenu-width: 300px
+
+.AccountMenu
+  left: 100%
+  top: 0
+  position: absolute
+  width: $AccountMenu-width
+  height: $Header-row-height
+  background-color: $brand-primary
+
+.AccountMenu-list
+  padding: 15px
+
+.AccountMenu-list-item
+  display: inline
+  margin-left: 15px
+
+.AccountMenu-list-divider
+  color: #666
+
+.AccountMenu--shown
+  left: 0
+
+.AccountMenu-signInButton,
+.AccountMenu-openTray,
+.AccountMenu-logout
+  color: $white
+
+  &:hover
+    color: $white
+
+
+// transition
+.AccountMenu
+  transition: left 0.5s ease

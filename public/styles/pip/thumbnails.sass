@@ -1,0 +1,35 @@
+// Thumbnails
+// ----------
+.Thumbnails
+  padding: 0
+  float: none
+  width: auto
+  list-style: none
+  text-align: center
+  max-height: 400px
+  margin: 20px 0
+  overflow: hidden
+
+.Thumbnail
+  display: inline
+
+.Thumbnail-image
+  width: 40px
+  height: 40px
+  margin: 5px 0
+  border: 2px solid transparent
+
+  &.Thumbnail-image--active
+    border: $border-bottom-hover-orange
+
+@media (min-width: $screen-md-min)
+
+  .Thumbnails
+    margin: 0 0 10px 0
+    float: right
+    width: 10%
+
+  .Thumbnail-image
+    width: 100%
+    height: auto
+    margin: 2px 0

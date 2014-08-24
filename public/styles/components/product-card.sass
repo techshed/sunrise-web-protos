@@ -1,0 +1,110 @@
+// Product card
+// ------------
+// the individual card that holds product information
+.ProductCard
+  +make-sm-column(3)
+  +make-md-column($five-col-layout)
+  +make-lg-column(2)
+  padding: $image-margin
+  border-right: $border
+  border-bottom: $border
+  background-color: $white
+
+// custom utility class for the product list area
+// - this class moves the grid layout down one size across all media queries when applied
+// - when applied, default values specified for the ProductCard grid class are overridden
+// * nesting needed to gain specificity of selector
+// * u-smaller is applied to ProductArea
+.ProductArea--smallGrid
+  .ProductCard
+    +make-sm-column(4)
+    +make-md-column(3)
+    +make-lg-column($five-col-layout)
+
+.ProductCard-target
+  text-decoration: none !important
+  color: $brand-secondary
+
+  &:hover
+    color: $brand-secondary
+
+.ProductCard-imageContainer
+  display: block
+  position: absolute
+  top: $image-margin
+  left: $image-margin
+  margin: 0
+
+.ProductCard-image
+  width: $image-size-resp
+  height: auto
+  display: block
+  margin: 0 auto $image-margin
+
+.ProductCard-titleContainer
+  display: block
+  margin: 0px ($image-size-resp + 2 * $image-margin)
+
+.ProductCard-title
+  position: relative
+  white-space: normal
+  height: $title-height-resp
+  text-align: left
+
+.ProductCard-titleText
+  overflow: hidden
+  margin-bottom: 0
+  height: $title-height-resp
+
+.ProductCard-brand
+  font-weight: bold
+
+.ProductCard-inventory
+  color: $gray
+  margin-bottom: 0
+
+.ProductCard-price
+  color: $brand-secondary
+  font-weight: bold
+  font-size: 14px
+
+.ProductCard-buttonContainer
+  display: block
+  float: right
+
+.ProductCard-button
+  height: $button-height
+
+@media (min-width: $screen-sm-min)
+
+  .ProductCard
+    display: inline-block
+    vertical-align: top
+    float: none !important
+    white-space: wrap
+    padding: 15px
+
+  .ProductCard-imageContainer
+    position: static
+
+  .ProductCard-image
+    height: $image-size-desk
+    width: auto
+
+  .ProductCard-titleContainer
+    margin: 0
+
+  .ProductCard-title
+    height: $title-height-desk
+
+  .ProductCard-titleText
+    height: $title-height-desk
+
+  .ProductCard-buttonContainer
+    float: none
+
+  .ProductCard-inventory
+    margin-bottom: 10px
+
+  .ProductCard-price
+    font-size: 16px

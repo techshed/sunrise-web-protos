@@ -1,0 +1,46 @@
+//
+// Base animation classes
+//
+
+
+// slide-in, slide-out in y direction
+//
+.a-slideInY,
+.a-slideOutY
+  +transition(200ms cubic-bezier(0.920, 0.005, 0.425, 0.810))
+  +transition-property(transform)
+  position: relative
+
+.a-slideInY.ng-enter
+  +translate(0, -10px)
+
+.a-slideInY.ng-enter-active,
+.a-slideOutY.ng-leave
+  +translate(0, 0)
+
+.a-slideOutY.ng-leave-active
+  +translate(0, 10)
+
+
+// fade-in, fade-out by opacity
+//
+.a-fadeIn,
+.a-fadeOut
+  +transition(200ms cubic-bezier(0.920, 0.005, 0.425, 0.810))
+  +transition-property(opacity)
+
+.a-fadeIn.ng-enter,
+.a-fadeIn.ng-hide-add
+  opacity: 0
+
+.a-fadeIn.ng-enter-active,
+.a-fadeOut.ng-leave,
+.a-fadeIn.ng-hide-add-active,
+.a-fadeOut.ng-hide-remove
+  opacity: 1
+
+.a-fadeOut.ng-leave-active,
+.a-fadeOut.ng-hide-remove-active
+  opacity: 0
+
+

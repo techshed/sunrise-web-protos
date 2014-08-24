@@ -1,0 +1,30 @@
+// Dialog Colors
+$dialog-error: #d2322d
+$dialog-wait: #428bca
+$dialog-notify: #eeeeee
+$dialog-confirm: #333333
+
+
+.dialog-header-error
+  background-color: $dialog-error
+.dialog-header-wait
+  background-color: $dialog-wait
+.dialog-header-notify
+  background-color: $dialog-notify
+.dialog-header-confirm
+  background-color: $dialog-confirm
+
+.dialog-header-error span,
+.dialog-header-error h4,
+.dialog-header-wait span,
+.dialog-header-wait h4,
+.dialog-header-confirm span,
+.dialog-header-confirm h4
+  color: $white
+
+// we needed to change this here because there was a bleeding problem which we could not fix with neither clipping nor overflow
+.dialog-header-error,
+.dialog-header-wait,
+.dialog-header-notify,
+.dialog-header-confirm,
+  @include border-top-radius($border-radius-base)

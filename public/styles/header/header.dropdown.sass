@@ -1,0 +1,42 @@
+// Dropdown menu
+// =============
+// specifically tailored dropdown menus for the header
+// * uses ng directive (lib/ui-bootstrap-dropdown.js)
+
+$list-item-padding: 5px 10px
+$padding-container: 14px 10px 0
+
+//== Dropdown
+//
+//## overwrites bootstrap's default behaviour
+.HeaderDropdown
+  &.dropdown
+    @extend .u-fillParent
+    color: $white
+    height: $Header-row-height
+
+  .dropdown-toggle
+    @extend .u-fillParent
+    color: inherit
+    display: block
+    padding: $padding-container
+
+    &:hover,
+    &:focus
+      @extend .u-killLinkStyle
+      background: $black
+
+  .dropdown-menu
+    border-radius: 0
+    margin: 0
+    border-top: 0
+    padding: 0
+    width: inherit
+
+  .list-item
+    padding: $list-item-padding
+
+.HeaderDropdown-fulfillmentTitle
+  text-overflow: ellipsis
+  white-space: nowrap
+  overflow: hidden

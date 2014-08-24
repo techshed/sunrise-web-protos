@@ -1,0 +1,118 @@
+// Custom loader
+// -------------
+// http://cssload.net/#sthash.3kawpPcC.dpuf
+
+.loader
+  text-align: center
+  margin: 0 auto
+  width: 80px
+  height: 50px
+
+  span
+    display: inline-block
+    vertical-align: middle
+    width: 10px
+    height: 10px
+    margin: 25px auto
+    background: #F96502
+    -moz-border-radius: 50px
+    -moz-animation: loader 1.1s infinite alternate
+    -webkit-border-radius: 50px
+    -webkit-animation: loader 1.1s infinite alternate
+    -ms-border-radius: 50px
+    -ms-animation: loader 1.1s infinite alternate
+    -o-border-radius: 50px
+    -o-animation: loader 1.1s infinite alternate
+    border-radius: 50px
+    animation: loader 1.1s infinite alternate
+
+
+#loader_1
+  -moz-animation-delay: 0s
+  -webkit-animation-delay: 0s
+  -ms-animation-delay: 0s
+  -o-animation-delay: 0s
+  animation-delay: 0s
+
+#loader_2
+  -moz-animation-delay: 0.33s
+  -webkit-animation-delay: 0.33s
+  -ms-animation-delay: 0.33s
+  -o-animation-delay: 0.33s
+  animation-delay: 0.33s
+
+#loader_3
+  -moz-animation-delay: 0.66s
+  -webkit-animation-delay: 0.66s
+  -ms-animation-delay: 0.66s
+  -o-animation-delay: 0.66s
+  animation-delay: 0.66s
+
+
+@-moz-keyframes loader
+  0%
+    width: 10px
+    height: 10px
+    background-color: $brand-primary
+    -moz-transform: translateY(0)
+
+
+  100%
+    width: 24px
+    height: 24px
+    background-color: $white
+    -moz-transform: translateY(-21px)
+
+@-webkit-keyframes loader
+  0%
+    width: 10px
+    height: 10px
+    background-color: $brand-primary
+    -webkit-transform: translateY(0)
+
+  100%
+    width: 24px
+    height: 24px
+    background-color: $white
+    -webkit-transform: translateY(-21px)
+
+@-ms-keyframes loader
+  0%
+    width: 10px
+    height: 10px
+    background-color: $brand-primary
+    -ms-transform: translateY(0)
+  100%
+    width: 24px
+    height: 24px
+    background-color: $white
+    -ms-transform: translateY(-21px)
+
+
+@-o-keyframes loader
+  0%
+    width: 10px
+    height: 10px
+    background-color: $brand-primary
+    -o-transform: translateY(0)
+
+  100%
+    width: 24px
+    height: 24px
+    background-color: $white
+    -o-transform: translateY(-21px)
+
+@keyframes loader
+  0%
+    width: 10px
+    height: 10px
+    background-color: #F96502
+    transform: translateY(0)
+
+  100%
+    width: 24px
+    height: 24px
+    background-color: $white
+    transform: translateY(-21px)
+
+

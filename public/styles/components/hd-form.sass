@@ -1,0 +1,99 @@
+// HD Form
+// ------
+.HDForm
+
+  label
+    font-weight: normal
+    font-size: $form-label-font-size
+
+  .has-error
+
+    label
+      color: $form-error-font-color
+
+  .col-md-6
+    padding: 0
+
+  .row
+    margin: 0
+
+  .glyphicon
+    position: absolute
+    top: ($input-height-base + 5)
+    right: 0
+    display: block
+    width: $input-height-base
+    height: $input-height-base
+    line-height: $input-height-base
+    text-align: center
+
+  .form-group
+    position: relative
+    background: $white
+    border: 1px solid #ccc
+    border-top: none
+    padding: 15px 20px
+    margin: 0 -18px
+    padding-bottom: 24px
+
+    &.form-first
+      border: 1px solid #ccc
+
+    &.form-first.right-half
+      border-top: none
+
+  .form-control
+    border: none
+    background: none
+    box-shadow: none
+    padding: 0
+    font-size: $form-input-font-size
+
+    &:focus
+      box-shadow: none
+
+.HDForm-buttonGroup.form-group
+  background: none
+  border: none
+  padding: 0
+  margin: 0
+  margin-top: 15px
+
+.HDForm-errorMessage
+  color: $form-error-font-color
+  font-size: $form-error-font-size
+  float: left
+  margin-right: 10px
+
+@media (min-width: $screen-sm-min)
+
+  .HDForm
+    .form-group
+      margin: 0
+
+      &.form-first
+        @include border-top-radius(4px)
+
+      &.form-last
+        @include border-bottom-radius(4px)
+
+      &.form-first.right-half
+        border-radius: 0
+
+    .HDForm-buttonGroup.form-group
+      margin: 0
+      margin-top: 15px
+
+@media (min-width: $screen-md-min)
+
+  .HDForm
+    .form-group
+      &.form-first.left-half
+        border-top-right-radius: 0
+
+      &.form-first.right-half
+        border-left: none
+        border-top: 1px solid #ccc
+        border-top-right-radius: 4px
+
+

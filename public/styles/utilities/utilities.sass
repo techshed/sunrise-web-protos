@@ -1,0 +1,44 @@
+// margin killer
+// -------------
+// neutralizes the padding added by cols in the bs grid
+.u-marginKiller
+  overflow-x: hidden
+  margin: 0 -15px
+
+  @media (min-width: $screen-sm-min)
+    overflow-y: visible
+
+.u-sm-marginKiller
+  @media (max-width: $screen-sm-min)
+    overflow-y: hidden
+    margin: 0 -15px
+
+// width pusher
+// ------------
+// forces the component to fill its container completely
+.u-widthPusher
+  width: 100% !important
+
+
+// orange hover
+// ------------
+// adds orange hover effect to the component
+.u-orangeHover
+  color: $white
+  background-color: $brand-primary
+  border-color: $brand-primary
+  cursor: pointer
+
+// fill parent
+// -----------
+// custom class to snap child element to parent's size
+.u-fillParent
+  width: 100%
+  height: 100%
+
+// kill link style
+// ---------------
+// custom class to override bootstraps link behavior
+.u-killLinkStyle
+  color: inherit
+  text-decoration: none

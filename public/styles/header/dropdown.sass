@@ -1,0 +1,64 @@
+// Dropdown menu
+// =============
+// specifically tailored dropdown menus for the header
+// * uses ng directive (lib/ui-bootstrap-dropdown.js)
+
+$list-item-padding: 5px 10px
+$padding-container: 14px 10px 0
+
+// custom class to snap child element to parent's size
+.fill-parent
+  width: 100%
+  height: 100%
+
+// custom class to override bootstrap dropdown link behavior
+.kill-link-style
+  color: inherit
+  text-decoration: none
+
+
+//== Dropdown
+//
+//## overwrites bootstrap's default behaviour
+.Header
+  .dropdown
+    @extend .fill-parent
+
+  .dropdown-toggle
+    @extend .fill-parent
+    color: inherit
+    display: block
+    padding: $padding-container
+
+    &:hover,
+    &:focus
+      @extend .kill-link-style
+
+  .dropdown-menu
+    border-radius: 0
+    margin: 0
+    border-top: 0
+
+    .list-item
+      color: $brand-secondary
+      padding: $list-item-padding
+
+      h5
+        margin-top: 5px
+        margin-bottom: 5px
+
+      &:hover,
+        background-color: $brand-primary
+        color: $white
+
+    .register
+      color: $brand-primary
+
+    .register,
+    .btn-login
+      padding: $list-item-padding
+
+    .store-button
+      text-align: center
+      color: $brand-secondary
+      padding: $list-item-padding

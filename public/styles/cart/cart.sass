@@ -1,0 +1,98 @@
+$cartItemQuantitySize: 40px
+
+.Cart
+  position: absolute
+  width: $cart-width
+  top: 50px
+  right: 0
+  background: $white
+  border-left: $border
+  border-bottom: $border
+  box-shadow: -22px 0 42px -23px rgba(0,0,0,0.3)
+
+.CartPane
+  .Cart
+    box-shadow: none
+    width: 100%
+
+
+.CartContents--empty
+  padding: 40px
+  text-align: center
+
+.CartContents--filled
+  overflow: auto
+
+  .media
+    margin-top: -1px
+    border-bottom: $border-gray
+    padding: 10px
+    position: relative
+
+.CartSection-title
+  margin: 0
+  padding: 5px 10px
+  font-size: 18px
+  border-bottom: $border-gray
+
+.CartCheckout
+  padding: 10px
+  border-top: $border-gray
+  box-shadow: 0 -25px 50px -30px rgba(0,0,0,0.2)
+
+.CartCheckoutButton
+  position: relative
+
+.CartCheckoutButton-total
+  position: absolute
+  left: 5px
+  background: rgba(255,255,255,0.3)
+  color: $white
+  padding: 0px 8px
+  border-radius: 5px
+
+.CartItem-text
+  padding-right: $cartItemQuantitySize + 5
+
+.QuantitySection-text
+  border: 1px solid $brand-primary
+  color: $brand-primary
+  position: absolute
+  right: 10px
+  top: 50%
+  height: $cartItemQuantitySize
+  width: $cartItemQuantitySize
+  text-align: center
+  line-height: $cartItemQuantitySize
+  border-radius: $cartItemQuantitySize
+  font-size: 18px
+  margin-top: -($cartItemQuantitySize/2)
+
+.CartItem
+  &:hover
+    .QuantitySection-text-number
+      display: none
+    .QuantitySection-text-action
+      display: block
+
+
+.QuantitySection-text-action
+  display: none
+  font-size: 12px
+  cursor: pointer
+
+.QuantitySection-steppers
+  width: 280px
+  position: absolute
+  right: 0px
+  top: 0px
+  background: rgba(255,255,255,0.8)
+  border-left: $border
+  bottom: 0
+  padding: 22px 0
+  padding-left: 90px
+  padding-right: 20px
+
+.QuantitySection-steppers-doneButton
+  position: absolute
+  left: 20px

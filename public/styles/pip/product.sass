@@ -1,0 +1,73 @@
+// Product styles
+// --------------
+.Product
+  padding: 20px 0
+  background: $white
+
+  .btn-add-to-cart
+    margin-top: 20px
+    margin-bottom: 20px
+    padding: 15px
+    font-size: 26px
+
+  .btn-option
+    border: $border
+    color: $brand-primary
+    background-color: $white
+    margin: 2px 0
+
+    &:hover
+      background-color: $gray-lighter
+
+.Product-image
+  width: 95%
+  float: none
+  display: block
+  margin: 0px auto
+
+.Product-mutedDetails
+  color: $muted-text
+
+.Product-tabs
+  padding: 20px 0
+  background: $white
+  border-bottom: $border
+
+// Price info section
+// ------------------
+.Product-info
+  padding: 10px 0
+  line-height: 26px
+
+.Product-info-priceSection
+  float: left
+
+.Product-title,
+.Product-price
+  font-size: 26px
+
+.Product-price
+  font-weight: bold
+
+.Product-info-aisleAndBay
+  background: $lighter-gray
+  float: right
+  padding: 10px
+  width: 75px
+  line-height: 18px
+
+@media (min-width: $screen-sm-min)
+  .Product
+    margin-top: 20px
+    border: $border
+    border-bottom: none
+
+  .Product-tabs
+    margin-bottom: 20px
+    border: $border
+    border-top: none
+
+@media (min-width: $screen-md-min)
+  .Product-image
+    width: 85%
+    float: left

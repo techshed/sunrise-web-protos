@@ -1,0 +1,70 @@
+.list-group
+  // No need to set list-style: none since .list-group-item is block level
+  margin-bottom: 20px
+  padding-left: 0
+
+  .active
+    @include box-shadow(5px 0px 0px 0px $brand-primary inset)
+
+// Individual list items
+//
+// Use on `li`s or `div`s within the `.list-group` parent.
+
+.list-group-item
+  position: relative
+  display: block
+  // Place the border on the list items and negative margin up for better styling
+  margin-bottom: -1px
+  background-color: $list-group-bg
+  border: 1px solid $list-group-border
+  padding: 0
+
+  // Round the first and last items
+  //&:first-child
+  //  @include border-top-radius($list-group-border-radius)
+
+  &:last-child
+    margin-bottom: 0
+    // @include border-bottom-radius($list-group-border-radius)
+
+  &:hover
+    background: $lighter-gray
+
+  // Align badges within list items
+  > .badge
+    float: right
+
+  > .badge + .badge
+    margin-right: 5px
+
+
+
+  a:hover,
+  h4:hover,
+  p:hover
+    text-decoration: none
+
+  h4
+    margin: 0
+    color: $brand-secondary
+  p
+    margin-bottom: 0
+    margin-top: 5px
+    line-height: 1.3
+    color: $text-muted
+
+  .list-group-item-content
+    padding: $grid-gutter-width/2 20px
+    width: 100%
+    vertical-align: middle
+    display: table-cell
+
+// Contextual variants
+//
+// Add modifier classes to change text and background color on individual items.
+// Organizationally, this must come after the `:hover` states.
+
+@include list-group-item-variant(success, $state-success-bg, $state-success-text)
+@include list-group-item-variant(info, $state-info-bg, $state-info-text)
+@include list-group-item-variant(warning, $state-warning-bg, $state-warning-text)
+@include list-group-item-variant(danger, $state-danger-bg, $state-danger-text)

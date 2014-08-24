@@ -1,0 +1,39 @@
+// Product Area
+// ------------
+// the area that holds the collection of product cards
+
+// controls the default height of the empty product areas
+$ProductArea-min-height: 319px
+$ProductArea-min-height-resp: 200px
+
+.ProductArea
+  +box-shadow(inset -1px -1px 0px 0px #ccc)
+  padding: 0
+  border: none
+  min-height: $ProductArea-min-height-resp
+  background-color: $white
+
+
+@media (min-width: $screen-sm-min)
+  .ProductArea
+    border-top: $border
+    border-left: $border
+    height: $ProductArea-min-height
+    min-height: $ProductArea-min-height
+    margin-bottom: 20px
+    overflow: hidden
+    white-space: nowrap
+
+
+// custom utility class for the product area
+// - this modifies the grid to assume a vertical stack for infinite scroll
+// * u-infiniteScroll stack is applied to the product area container
+// * nesting needed to gain specificity of selector
+.u-infiniteScroll
+  .ProductArea
+    overflow: visible
+    white-space: normal
+    height: auto
+
+  .Chrome-buttonGroup
+    display: none

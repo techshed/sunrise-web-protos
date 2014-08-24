@@ -1,0 +1,18 @@
+// Occupation Area
+// ---------------
+// the area that holds the collection of occupation cards
+
+// controls the default height of the empty occupation area
+$occupation-area-min-height: 400px
+$occupation-area-min-height-resp: 200px
+
+.OccupationArea
+  border-top: $border
+  border-left: $border
+  min-height: $occupation-area-min-height
+
+@media (max-width: $screen-xs-max)
+  .OccupationArea
+    border: none
+    padding: 0
+    min-height: $occupation-area-min-height-resp

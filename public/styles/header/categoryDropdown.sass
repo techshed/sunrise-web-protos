@@ -1,0 +1,77 @@
+// CategoryDropDown
+// ----------------
+// the header's category drop down menu
+
+$markerSize: 5px
+$CategoryDropDown-width: 540px
+$CategoryDropDown-secondary-width: 300px
+$menu-height: 500px
+
+
+.CategoryDropDown
+  padding: 0
+  height: $menu-height
+  box-shadow: none
+  border: none
+  margin-top: 0
+
+  & ul
+    list-style: none
+    padding-left: 0
+    margin: 0
+
+.CategoryDropDown--showSubCategories
+  width: $CategoryDropDown-width
+  background-color: transparent
+
+
+// CategoryDropDown-categories
+// ---------------------------
+// the primary dropdown
+
+.CategoryDropDown-categories
+  border-bottom: $border
+  background-color: $white
+  height: $menu-height
+  overflow-y: scroll
+
+  .active
+    @include box-shadow($markerSize 0px 0px 0px $brand-primary inset)
+
+.CategoryDropDown-categoryItem
+  color: $brand-secondary
+  padding: 10px ($markerSize + 10px)
+  border-bottom: $border
+  border-right: $border
+  cursor: pointer
+
+  &:last-child
+    border-bottom: none
+
+
+// CategoryDropDown-subcategories
+// ------------------------------
+// the secondary 'sub' drop down
+
+.CategoryDropDown-subcategories
+  height: $menu-height
+  overflow-y: scroll
+  background-color: $white
+  width: $CategoryDropDown-secondary-width
+  border: $border
+  border-left: none
+  border-top: none
+
+.CategoryDropDown-subCategoryItem
+  color: $gray-dark
+  font-size: $font-size-base
+  padding: 5px 10px
+  cursor: pointer
+
+
+// class that blocks scroll movement on the body
+// * this is used by the dropdown directive to stop a scroll
+//   event from triggering scroll on the body element
+.u-scrollBlock
+  overflow-y: hidden
+  height: 100%
