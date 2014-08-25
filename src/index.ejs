@@ -1,0 +1,64 @@
+
+<!doctype html>
+<html class="no-js">
+  <head>
+
+    <!-- bootstrap flags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" media="(device-height: 568px)"/>
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico"/>
+
+    <!-- compatability flags for ie8 -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1,IE=8">
+
+    <!-- styles -->
+    <link href="styles/lib.css" rel="stylesheet"/>
+    <link href="styles/core.css" rel="stylesheet"/>
+    <!-- iconography -->
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <script src="js/preload.js"></script>
+
+  </head>
+  <body>
+    <div class="Body">
+
+      <!-- mobile header -->
+      <%- partial("partials/_header-mobile") %>
+
+      <!-- desktop header -->
+      <%- partial("partials/_header-desktop") %>
+
+      <!-- main -->
+      <div class="ViewTarget container">
+
+        <!-- ui-router target -->
+        <div class="row">
+          <div ui-view class="col-xs-12">
+
+          <%- partial("partials/_storefront.ejs") %>
+
+          </div>
+        </div>
+
+        <!-- ad spacer -->
+        <div class="AdSpacer row hidden-xs">
+        </div>
+
+      </div>
+
+      <!-- mobile footer -->
+      <div hd-mobile-footer></div>
+
+      <!-- desktop footer -->
+      <%- partial("partials/_footer-desktop") %>
+  </div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="js/lib.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

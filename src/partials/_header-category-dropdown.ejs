@@ -1,0 +1,33 @@
+<div hd-hover-scroll-block class="Header-category pull-left">
+  <div class="dropdown" on-toggle="toggled(open)">
+    <!-- dropdown button -->
+    <a href class="dropdown-toggle">
+      <i class="fa fa-caret-down pull-right"></i>
+      Departments
+    </a>
+    <div class="CategoryDropDown dropdown-menu clearfix" ng-class="{ 'CategoryDropDown--showSubCategories' : showSubcategories }">
+      <!-- categories -->
+      <div class="CategoryDropDown-categories pull-left">
+        <ul>
+          <li class="CategoryDropDown-categoryItem"
+              ng-repeat="category in categories.subcategories"
+              ng-mouseover="displaySubcategories(category.id)"
+              ng-click="directToCategory(category.id)"
+              ng-class="{ 'active': (category.id === currentCategoryId) }">
+            {{ category.title }}
+          </li>
+        </ul>
+      </div>
+      <!-- subcategories -->
+      <div class="CategoryDropDown-subcategories pull-left" ng-show="showSubcategories">
+        <ul>
+          <li class="CategoryDropDown-subCategoryItem"
+              ng-repeat="subcategory in subcategories"
+              ng-click="directToCategory(subcategory.id)">
+            {{ subcategory.title }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

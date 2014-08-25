@@ -1,0 +1,68 @@
+<!-- mobile nav -->
+<div class="MobileNav visible-xs">
+
+  <!-- these toggle depending on page mode -->
+  <div class="MobileNav-menuButton">
+    <button type="button" class="MobileNav-menuIcon" ng-click="toggleMenuShown()" ng-hide="showCloseButton">
+        <span class="glyphicon glyphicon-align-justify"></span>
+    </button>
+    <button type="button" class="MobileNav-closeIcon" ng-click="backButtonPressed()" ng-show="showCloseButton">
+        <span class="glyphicon glyphicon-remove"></span>
+    </button>
+  </div>
+
+  <!-- these toggle depending on page mode -->
+  <div class="MobileNav-search" ng-hide="showTitle">
+    <div hd-search-field class="visible-xs" data-query="query" data-placeholder="Search Products"></div>
+  </div>
+  <div class="MobileNav-title" ng-show="showTitle">
+    <h4> {{ title }} </h4>
+  </div>
+
+  <!-- cart button is persistent -->
+  <div class="MobileNav-cartButton">
+    <button type="button" class="MobileNav-cartIcon" ng-click="toggleCartShown()">
+      <span class="glyphicon glyphicon-shopping-cart"></span>
+    </button>
+  </div>
+</div>
+
+<!-- mobile nav menu list -->
+<div class="MenuPane visible-xs" ng-class="{ 'MenuPane--shown': menuShown }">
+  <div class="MenuPane-accountArea">
+    <h4 class="MenuPane-accountTitle">Have an account?</h4>
+    <a class="MenuPane-accountLink" hd-track-click="Navigation - Login">login or signup</a>
+  </div>
+  <ul class="MenuPane-list">
+    <li class="MenuPane-listItem">
+      <a ui-sref="storeFront" ng-click="toggleMenuShown()" hd-track-click="Navigation - Home">Home</a>
+    </li>
+    <li class="MenuPane-listItem">
+      <a ui-sref="category({ categoryId: '' })" ng-click="toggleMenuShown()" hd-track-click="Navigation - Categories">Departments</a>
+    </li>
+    <li class="MenuPane-listItem">
+      <a ui-sref="storeFinder" ng-click="toggleMenuShown()" hd-track-click="Navigation - Store Finder">Stores</a>
+    </li>
+    <li class="MenuPane-listItem">
+      <a ui-sref="purchaseHistory" ng-click="toggleMenuShown()" hd-track-click="Navigation - Purchases">Purchases</a>
+    </li>
+    <li class="MenuPane-listItem">
+      <a href="#" ng-click="toggleMenuShown()" hd-track-click="Navigation - Receipts">Receipts</a>
+    </li>
+    <li class="MenuPane-listItem">
+      <a ui-sref="lists()" ng-click="toggleMenuShown()" hd-track-click="Navigation - Lists">Lists</a>
+    </li>
+    <li class="MenuPane-listItem">
+      <a href="#" ng-click="toggleMenuShown()" hd-track-click="Navigation - Account">My account</a>
+    </li>
+    <li class="MenuPane-listItem">
+      <a href="#" ng-click="toggleMenuShown()" hd-track-click="Navigation - Help">Help</a>
+    </li>
+  </ul>
+</div>
+
+<!-- mobile nav cart -->
+<div class="CartPane visible-xs" ng-class="{ 'CartPane--shown': cartShown }">
+  <h3 class="CartPane-title"> Cart </h3>
+  <div hd-cart data-mobile="true"></div>
+</div>

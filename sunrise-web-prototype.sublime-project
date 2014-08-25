@@ -3,6 +3,6 @@
     "follow_symlinks": true,
     "path": ".",
     "file_exclude_patterns": ["*.css", "*.woff", "*.svg", "*.webm", "*.mp4", "src/bower_components"],
-    "folder_exclude_patterns": ["dist", ".tmp", ".sass-cache", "node_modules", "test"]
+    "folder_exclude_patterns": ["dist", ".tmp", ".sass-cache", "node_modules", "test", "lib"]
   }]
 }
