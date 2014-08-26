@@ -1,1 +1,0 @@
-var hammers = new EJS({url: 'hammers.ejs'}).render(data);
