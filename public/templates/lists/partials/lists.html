@@ -1,0 +1,59 @@
+<div class="u-sm-marginKiller">
+  <div class="col-xs-12">
+    <div class="Chrome row">
+      <h3 class="Chrome-title">My Lists <a class="Chrome-titleAction" ng-click="addList()">Add a List</a></h3>
+    </div>
+
+    <!-- loading -->
+    <div ng-show="showLoading">
+      Loading <img src="/static/core/images/loading-small.gif">
+    </div>
+
+    <!-- laoding error indicator -->
+    <div ng-show="showLoadingError">
+      Unable to fetch your lists.
+    </div>
+
+
+    <div class="Lists row" ng-hide="showLoading || showLoadingError">
+
+      <!-- empty list indicator -->
+      <div class="Lists--empty" ng-show="lists.length === 0">
+        You haven't created any lists yet.
+      </div>
+
+      <div class="col-md-6" ng-show="lists.length > 0 || newList">
+        <div class="u-sm-marginKiller">
+          <!-- render lists -->
+          <ul class="list-group">
+            <li class="list-group-item" ng-if="newList">
+              <div class="list-group-item-content-newlist">
+                <input class="form-control" type="text" placeholder="Untitled List" ng-model="newListName" hd-new-list="createList(newListName)" ng-trim="true"></input>
+              </div>
+            </li>
+            <li class="list-group-item"
+                ng-repeat="list in lists"
+                ng-click="select($index)"
+                ng-class="{ active: $index === selectedIndex }" >
+              <a ui-sref="lists.list({ id: list.id })"
+                 hd-track-click="Lists - List"
+                 hd-track-click-properties='{ "listID": "{{ list.id }}", "itemCount": "{{ list.items_count }}" }'>
+                <div class="list-group-item-content">
+                  <h4>{{ list.name }}</h4>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-md-6" ng-show="lists.length > 0 || newList">
+        <div class="u-sm-marginKiller">
+          <!-- render selected list -->
+          <div ui-view></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

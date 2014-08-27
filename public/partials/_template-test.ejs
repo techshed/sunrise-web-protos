@@ -1,0 +1,25 @@
+<%
+var items = public.partials.plp.hammers._data;
+
+for(var i in items){ %>
+    <div class="ProductCard">
+      <a class="ProductCard-target">
+        <div class="ProductCard-imageContainer">
+          <img class="ProductCard-image" src="<%=items[i].thumbnail_url%>">
+        </div>
+        <div class="ProductCard-titleContainer">
+          <div class="ProductCard-title">
+            <p class="ProductCard-titleText">
+              <%=items[i].brand_name%> <%= items[i].title %>
+            </p>
+          </div>
+          <p class="ProductCard-inventory">
+            <span class="ProductCard-price"><%= items[i].price || 0 %></span> - <%= items[i].inventoryCount || 0 %> in stock
+          </p>
+        </div>
+        <div class="ProductCard-buttonContainer">
+
+        </div>
+      </a>
+    </div>
+<% } %>

@@ -1,0 +1,67 @@
+<div class="AddToCardButton" ng-class="{'AddToCardButton--noCover': noCover, 'AddToCardButton--big': bigButton}">
+
+  <div class="AddToCardButton-fulfillmentOptions"
+    ng-hide="!bigButton">
+
+    <div class="FulfillmentRadio"
+        ng-repeat='(name, text) in FulfillmentOptions'
+        ng-class="{'FulfillmentRadio--checked': product.defaultFulfillment === name,
+                    'FulfillmentRadio--disabled': product.isFulfillmentAvailable(name) === false }"
+        ng-click="selectFulfillment(name)">
+      <span class="FulfillmentRadio-tick">
+        <i class="fa fa-check" ng-if="product.defaultFulfillment === name"></i>
+        <span ng-if="product.isFulfillmentAvailable(name) === false">&times;</span>
+      </span>
+      <span class="FulfillmentRadio-label">
+        {{ text }}
+        <span ng-if="product.isFulfillmentAvailable(name) === false">(not available)</span>
+      </span>
+    </div>
+
+  </div>
+
+  <button type="button" class="AddButton btn-block btn-md"
+          ng-hide="cartResource.hasProduct(product)"
+          ng-disabled="!product.defaultFulfillment || cartResource.isLoading(product)"
+          ng-click="addToCart()">
+
+    <span ng-show="cartResource.isLoading(product)">
+      <img src="/static/core/images/loading-small.gif"> Adding to cart
+    </span>
+    <span ng-show="product.defaultFulfillment && !cartResource.isLoading(product)">
+      <i class="fa fa-shopping-cart"></i>
+      Add to cart
+    </span>
+    <span ng-hide="product.defaultFulfillment">
+      No Fulfillment
+    </span>
+  </button>
+
+  <div class="AddButton-steppers" ng-show="cartResource.hasProduct(product)">
+    <div class="AddButton-loading" ng-show="cartResource.isLoading(product)">
+      <img src="/static/core/images/loading-small.gif"> Saving...
+    </div>
+    <div class="AddButton-step-minus">
+      <button class="AddButton-step btn btn-md"
+              ng-click="decrementQuantity(product)"
+              ng-disabled="count === 0">
+        <i class="fa fa-minus"></i>
+      </button>
+    </div>
+    <div class="AddButton-step-amount">
+        <input type="number" class="form-control" ng-model="count">
+    </div>
+    <div class="AddButton-step-plus">
+      <button class="AddButton-step btn btn-md"
+              ng-click="incrementQuantity(product)"
+              ng-disabled="count === stock">
+        <i class="fa fa-plus"></i>
+      </button>
+    </div>
+  </div>
+
+  <button type="button" class="PlpCartBtn btn-block btn-md" ng-show="count">
+    <div class="AddButton-circle">{{ count }}</div> in cart
+  </button>
+
+</div>

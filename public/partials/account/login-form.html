@@ -1,0 +1,47 @@
+<h3>
+  Login
+  <small class="pull-right">
+    <a ui-sref="register()">Sign up for a new account</a>
+  </small>
+</h3>
+
+<form name="form" role="form" novalidate ng-submit="login()" class="HDForm" hd-track-form="Login">
+
+  <!-- Email Address -->
+  <div class="form-group form-first" ng-class="getSuccessClass(form.email)">
+    <label for="email">Email address</label>
+    <input type="email"
+           id="email"
+           name="email"
+           ng-model="email"
+           class="form-control"
+           required />
+    <span class="glyphicon form-control-feedback" ng-class="getIconClass(form.email)"></span>
+    <div class="HDForm-errorMessage" ng-show="hasRequiredError(form.email)">Email is required</div>
+    <div class="HDForm-errorMessage" ng-show="hasError(form.email)">Please enter a valid email</div>
+  </div>
+
+  <!-- Password -->
+  <div class="form-group form-last" ng-class="getSuccessClass(form.password)">
+    <label for="password">Password</label>
+    <input type="password" class="form-control" name="password" ng-model="password" id="password" required>
+    <span class="glyphicon form-control-feedback" ng-class="getIconClass(form.password)"></span>
+    <div class="HDForm-errorMessage" ng-show="hasRequiredError(form.password)">
+      Password is required
+    </div>
+  </div>
+
+  <!-- Forgot your password link -->
+  <div class="form-group HDForm-buttonGroup">
+    <div class="text-right">
+      <a ui-sref="forgotPassword()">Forgot your password</a>
+    </div>
+  </div>
+
+  <!-- Submit button -->
+  <div class="form-group HDForm-buttonGroup">
+    <button type="submit" class="btn btn-lg btn-primary btn-block" ng-disabled="hasError(form) || hasRequiredError(form)">Login</button>
+    <button type="submit" class="btn btn-lg btn-default btn-block">Continue as Guest</button>
+  </div>
+
+</form>

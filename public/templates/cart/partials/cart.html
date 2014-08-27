@@ -1,0 +1,71 @@
+<div class="CartContents CartContents--empty" ng-if="!cartModel.itemCount">
+  <img src="/static/core/images/cart.png" />
+  <h3 class="Chrome">Your cart is empty</h3>
+  <p>
+    Click the add to cart button on products to build your order
+  </p>
+  <button class="btn btn-primary">
+    Search product inventory
+  </button>
+</div>
+
+<div ng-if="cartModel.itemCount">
+  <div class="CartContents CartContents--filled">
+    <div class="CartSection" ng-repeat="section in cartModel.sections">
+
+      <h3 class="CartSection-title">
+        {{ section.title }}
+      </h3>
+
+      <div class="media CartItem" ng-repeat="cartItem in section.cartItems">
+
+        <a class="pull-left" ui-sref="product(cartItem.product.id)">
+          <img class="media-object" src="http://placehold.it/60&amp;text=TODO"  dsrc="{{ cartItem.product.thumbnailUrl }}" width="60">
+        </a>
+
+        <div class="media-body">
+
+          <div class="CartItem-text">
+            <p>{{ cartItem.product.title }}</p>
+            <b>{{ cartItem.product.price }}</b> / each
+          </div>
+
+          <div class="QuantitySection">
+
+            <div class="QuantitySection-text" ng-show="!getEdit(cartItem)">
+              <span class="QuantitySection-text-number">
+                {{ cartItem.quantity }}
+              </span>
+              <span class="QuantitySection-text-action" ng-click="setEdit(cartItem, true)">
+                Edit
+              </span>
+            </div>
+
+            <div class="QuantitySection-steppers" ng-show="getEdit(cartItem)">
+              <button class="btn btn-default QuantitySection-steppers-doneButton" ng-click="setEdit(cartItem, false)">Done</button>
+              <div add-to-cart-button
+                   data-tracking-namespace="Cart"
+                   data-product="cartItem.product"
+                   data-no-cover="true"
+                   data-stock="cartItem.product.inventoryCount">
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="CartCheckout">
+    <div class="btn btn-primary btn-block CartCheckoutButton">
+      <span class="CartCheckoutButton-total">
+        {{ cartModel.subtotal }}
+      </span>
+      Checkout
+    </div>
+    <div style="margin-top: 20px" class="text-center">
+      Add promotion code
+    </div>
+  </div>
+</div>

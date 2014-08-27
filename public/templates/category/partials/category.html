@@ -1,0 +1,55 @@
+<div class="Chrome row visible-xs">
+  <!-- mobile chrome title -->
+  <h3 class="Chrome-title col-xs-12">
+    Browse Categories
+  </h3>
+</div>
+
+<div class="row">
+  <!-- breadcrumbs -->
+  <div class="Breadcrumbs">
+    <ul class="Breadcrumbs-list">
+      <li class="Breadcrumbs-item"
+          ng-repeat="childCategory in CategoryStack.stack"
+          ng-click="getPreviousCategory(childCategory.id)">
+        <h5 class="Breadcrumbs-itemTitle">
+          {{ childCategory.title }}
+          <i class="fa fa-chevron-right hidden-xs" ng-if="!$last"></i>
+        </h5>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="row">
+  <!-- category area -->
+  <div class="CategoryList u-marginKiller" ng-if="displayMenu">
+    <h4 class="CategoryList-title hidden-xs">
+      {{ CategoryStack.current.title }}
+    </h4>
+    <ul class="CategoryList-list" ng-if="displayMenu">
+      <li class="CategoryList-item"
+          ng-repeat="subcategory in CategoryStack.current.subcategories"
+          ng-click="getCategory(subcategory.id)">
+        <h5 class="CategoryList-itemTitle">
+          {{ subcategory.title }}
+        </h5>
+      </li>
+    </ul>
+  </div>
+  <!-- product areas -->
+  <div class="CategoryProducts" ng-class="{ 'u-widthPusher': !displayMenu }" ng-if="displayProducts">
+    <div hd-product-list class="row hidden-xs"
+         data-products="recommendations.products"
+         data-title="Best sellers in {{ CategoryStack.current.title }}"
+         data-total-products="recommendations.totalProducts"
+         ng-class="{ 'ProductArea--smallGrid': displayMenu }">
+    </div>
+    <div hd-product-list class="row u-infiniteScroll"
+         data-products="products.products"
+         data-title="Items in {{ CategoryStack.current.title }}"
+         data-total-products="products.totalProducts"
+         ng-class="{ 'ProductArea--smallGrid': displayMenu }">
+    </div>
+  </div>
+</div>

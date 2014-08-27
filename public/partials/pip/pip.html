@@ -1,0 +1,79 @@
+<div class="Product row">
+  <div class="col-sm-6">
+    <div hd-thumbnails class="clearfix"></div>
+  </div>
+
+  <div class="col-sm-6">
+    <p>
+      <span class="Product-title">
+        {{ product.brandName }} {{ product.title }}
+      </span>
+    </p>
+    <p class="Product-mutedDetails">
+      Model # MRF3LB Internet # {{ product.id }} Store SKU # 807590
+    </p>
+    <div class="Product-info clearfix">
+      <div class="Product-info-priceSection">
+        <span class="Product-price">
+          {{ product.price || 0 }} /each
+        </span>
+        <div>
+          {{ product.inventoryCount || 0 }} in stock in San Mateo
+          <a href="#">change</a>
+        </div>
+      </div>
+      <div class="Product-info-aisleAndBay">
+        aisle 9
+        bay 008
+      </div>
+    </div>
+    <div hd-add-to-cart></div>
+  </div>
+</div>
+
+<div class="Product-tabs row">
+  <div class="col-md-12">
+    <ul class="nav nav-pills nav-justified">
+      <li ui-sref-active="active" class="active">
+        <a ui-sref="product.specifications({ id: product.id })"
+           hd-track-click="PIP - Specifications"
+           hd-track-click-properties='{ "productID": "{{ product.id }}" }'>
+          Specifications
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="product.overview({ id: product.id })"
+           hd-track-click="PIP - Overview"
+           hd-track-click-properties='{ "productID": "{{ product.id }}" }'>
+          Overview
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="product.reviews({ id: product.id })"
+           hd-track-click="PIP - Reviews"
+           hd-track-click-properties='{ "productID": "{{ product.id }}" }'>
+          Reviews
+          <div hd-review-stars data-value="product.averageRating" class="Review-stars--inline"></div>
+        </a>
+      </li>
+      <li ui-sref-active="active" ng-class="{ disabled: !product.pdfDocuments.length }">
+        <a ui-sref="product.safety({ id: product.id })" ng-show="product.pdfDocuments"
+           hd-track-click="PIP - Safety"
+           hd-track-click-properties='{ "productID": "{{ product.id }}" }'>
+          Info &amp; Guides
+        </a>
+        <a ng-hide="product.pdfDocuments">Info &amp; Guides</a>
+      </li>
+    </ul>
+    <div class="tab-content clearfix">
+      <div ui-view></div>
+    </div>
+  </div>
+</div>
+
+<div hd-product-list class="row"
+     data-products="results.products"
+     data-title="Recommended items"
+     data-total-products="results.totalProducts">
+</div>
+

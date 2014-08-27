@@ -4,8 +4,10 @@ var mustache = require("gulp-mustache");
 var sass        = require('gulp-ruby-sass');
 var browserSync = require('browser-sync');
 
+
+
 gulp.task('serve', function () {
-    harp.server('app', { port: 9000 }, function () {
+    harp.server('public', { port: 9000 }, function () {
         browserSync({
               proxy: "localhost:9000",
               /* Hide the notification. It gets annoying */

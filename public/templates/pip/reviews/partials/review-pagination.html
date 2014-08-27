@@ -1,0 +1,4 @@
+<button ng-click="prevPage()" ng-disabled="prevDisabled" class="btn btn-default Reviews-prevButton">Previous</button>
+<button ng-click="nextPage()" ng-disabled="nextDisabled" class="btn btn-default Reviews-nextButton">Next</button>
+<span class="Reviews-pageSummary">page {{ reviewPage }} of {{ totalPages }}</span>
+<span ng-show="showLoading">Loading...</span>

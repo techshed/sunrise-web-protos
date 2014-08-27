@@ -1,0 +1,20 @@
+<div class="Header-fulfillment pull-left">
+  <div class="dropdown HeaderDropdown" on-toggle="toggled(open)">
+    <a href class="dropdown-toggle HeaderDropdown-fulfillmentTitle">
+      <i class="fa fa-caret-down pull-right"></i>
+      Pickup in {{ currentStore.city }}
+    </a>
+    <ul class="dropdown-menu dropdown-menu--light">
+      <li class="list-item" ng-repeat="store in stores | limitTo: 5"
+          ng-click="selectStore(store)">
+        <h5>{{ store.city }} <small> {{ store.storeId }} </small></h5>
+      </li>
+      <li class="divider"></li>
+      <li class="list-item">
+        <h5 ui-sref="storeFinder">
+          Change store
+        </h5>
+      </li>
+    </ul>
+  </div>
+</div>

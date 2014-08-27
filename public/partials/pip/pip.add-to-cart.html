@@ -1,0 +1,36 @@
+<div class="row">
+
+  <div class="col-md-12">
+    <div add-to-cart-button data-tracking-namespace="PIP" data-product="product" data-big-button="true" data-stock="product.inventoryCount">
+      <button class="btn btn-hd btn-md btn-block btn-add-to-cart">
+      <i class="glyphicon glyphicon-plus"></i> Add to Cart
+    </div>
+  </div>
+
+  <div class="col-md-12 col-xs-12">
+    <div class="Pip-helperButtons">
+      <div class="Pip-helperButton ListDropdown dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown">
+          <i class="fa fa-list"></i> Add to list
+        </a>
+        <ul class="btn-block ListDropdown-menu dropdown-menu text-left list-choice" role="menu" >
+          <li ng-repeat="list in lists" class="dropdown-toggle" data-toggle="dropdown">
+            <a href="#" ng-click="addToList(list)">{{ list.name }}
+              <i class="ListDropdown-checkIcon pull-right fa fa-check" ng-show="isInList(list)"></i>
+            </a>
+          </li>
+          <li class="divider"></li>
+          <li>
+            <a href="#" ng-if="!addNewListMode" ng-click="enableAddNewListMode()">Create a New List</a>
+            <div class="col-md-12" ng-if="addNewListMode">
+              <input class="ListDropdown-newListInput form-control" type="text" placeholder="New list name" ng-model="listName" no-click-propagation></input>
+              <button class="ListDropdown-newListButton btn btn-primary" ng-click="createList(listName)" no-click-propagation>Create</button>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <a class="Pip-helperButton hidden-xs"><i class="fa fa-share-square-o"></i> Share</a>
+    </div>
+  </div>
+
+</div>

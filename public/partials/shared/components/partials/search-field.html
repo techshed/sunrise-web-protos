@@ -1,0 +1,20 @@
+<form ng-submit="submit()" hd-track-form="Search">
+  <div class="SearchBox">
+    <!-- search input -->
+    <input type="search"
+           class="form-control {{ class }}"
+           placeholder="{{ placeholder }}"
+           ng-model="query"
+           ng-blur="closeSuggestions()"
+           ng-keyup="autosuggest($event.keyCode)" />
+    <!-- suggestion list -->
+    <div class="SearchBox-suggestions form-control" ng-show="suggestions.length">
+      <div class="Suggestion"
+           ng-class="{ 'Suggestion--selected': (selectedIndex % suggestions.length == $index) }"
+           ng-repeat="suggestion in suggestions"
+           ng-click="selectSuggestion(suggestion)" >
+        {{ suggestion }}
+      </div>
+    </div>
+  </div>
+</form>

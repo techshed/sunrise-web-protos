@@ -1,0 +1,62 @@
+<div class="row">
+  <h3 class="hidden-xs">Purchases</h3>
+  <div class="PurchaseHistory-loading a-fadeIn a-fadeOut" ng-show="showLoading">
+    Loading <img src="/static/core/images/loading-small.gif">
+  </div>
+  <div class="PurchaseHistory-error" ng-show="showLoadingError">
+    Unable to fetch your past purchases.
+  </div>
+  <div class="PurchaseHistory-body" ng-hide="showLoading || showLoadingError">
+    <div ng-show="orderList.length === 0">
+      <p>You don't have any past purchases.</p>
+    </div>
+    <div class="Chrome-row" ng-if="orderList.length > 0">
+      <ul class="OrderList list-group col-md-6 col-sm-6 col-xs-6">
+        <li class="OrderListItem list-group-item"
+            ng-repeat="order in orderList"
+            ng-class="{'active': $index == selectedOrderIndex}">
+
+          <div class="OrderListItemContent list-group-item-content"
+            ng-click="selectOrder($index)">
+            <div class="row">
+              <div class="OrderListItemContent-chevron pull-right visible-xs">
+                <i class="fa fa-chevron-right"></i>
+              </div>
+              <div class="col-md-12 col-sm-12 col-xs-8">
+                <div>
+                  <b>{{ order.storeName }} purchase</b>
+                </div>
+                <div class="OrderListItemContent-subtext">
+                  {{ order.date | date }}, {{ order.total }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+
+      <div class="OrderDetails col-md-6 col-sm-6 col-xs-6">
+        <div class="OrderDetails-header">
+          <button class="ReceiptButton btn btn-default" ng-click="printReceipt()">
+            <i class="fa fa-file-text"></i> Order details
+          </button>
+          <h3>{{ orderList[selectedOrderIndex].job_name }}</h3>
+          <a>Edit job name</a>
+        </div>
+
+        <div class="OrderDetails-products">
+          <div hd-product-row-list
+            data-products="selectedOrderProducts">
+          </div>
+        </div>
+
+        <div class="OrderDetails-footer">
+          <div add-list-to-cart-button
+            data-products="selectedOrderProducts"
+            data-total="orderList[selectedOrderIndex].total">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

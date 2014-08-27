@@ -1,0 +1,44 @@
+<!-- Show Mode -->
+<div class="ProductRowList">
+  <div class="ProductRowListItem a-listItem"
+    ng-click="onItemClicked($index, $event)"
+    ng-repeat="product in products">
+
+    <div class="media">
+
+      <a class="pull-left" ui-sref="product({ id: product.id })">
+        <img class="ProductRowListItem-thumbnail media-object" ng-src="{{ product.thumbnailUrl }}" />
+      </a>
+
+      <div class="media-body">
+        <!-- Add to Cart Button, Steppers etc. -->
+
+        <!-- Show Mode -->
+        <div class="AddToCart" ng-if="mode === 'ListModeShow'">
+          <span class="AddToCart-amount">{{ product.quantity }}</span>
+          <span class="AddToCart-button">
+            <div add-to-cart-button
+              data-product="product"
+              data-stock="product.inventory_count"></div>
+          </span>
+        </div>
+
+        <!-- Edit Mode -->
+         <div class="ProductRowListItem-cart" ng-if="mode === 'ListModeEdit'">
+          <!-- button for deleting an item from the list -->
+            <i class="pull-right fa fa-times ProductRowListItem-deleteIcon is-editable" ng-click="deleteItem($index, $event)"></i>
+            <input class="form-control AddToCart-amount is-editable" type="text" value="{{ product.quantity }}" ng-model="product.quantity"></input>
+        </div>
+
+        <!-- Product Details -->
+
+        <div class="ProductRowListItem-details">
+          <div class="ProductRowListItem-details-title media-heading">{{ product.brand_name }} {{ product.title }}</div>
+          <span class="ProductRowListItem-details-price">{{ product.price }} </span>
+          <span class="ProductRowListItem-details-stock">{{ product.inventory_count }} in stock</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

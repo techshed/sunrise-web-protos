@@ -1,0 +1,32 @@
+<div hd-review-distribution
+     data-distribution="reviewResults.distribution"
+     data-total="reviewResults.totalReviewCount"
+     data-average="product.averageRating"
+     class="DistributionTable col-md-12">
+</div>
+
+<div class="col-md-12">
+  <div class="row">
+    <div class="ReviewHeader">
+      <h4>{{ reviewResults.totalReviewCount }} Reviews</h4>
+    </div>
+    <ul class="Reviews">
+      <li ng-repeat="review in reviewResults.reviews" class="Review row">
+        <div class="Review-author col-md-2">
+          <div>
+            {{ review.author }}
+          </div>
+          <small>
+            {{ review.timestamp|date:'longDate' }}
+          </small>
+        </div>
+        <div class="Review-body col-md-10">
+          <div hd-review-stars data-value="review.rating" data-total="review.totalReviewCount"></div>
+          <h5> {{ review.title }} </h5>
+          {{ review.text }}
+        </div>
+      </li>
+    </ul>
+    <div hd-review-pagination ng-show="reviewResults.totalReviewCount > 5"></div>
+  </div>
+</div>

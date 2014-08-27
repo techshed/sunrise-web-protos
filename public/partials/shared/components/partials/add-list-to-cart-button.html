@@ -1,0 +1,8 @@
+<button class="AddAllButton btn btn-hd btn-lg btn-block"
+    ng-click="addAllToCart()"
+    ng-disabled="buttonDisabled">
+  <span class="AddAllButton-price pull-left">{{ total }}</span>
+  <span ng-hide="adding || done">Add all to cart</span>
+  <span ng-show="done">All added to cart succesfully.</span>
+  <span class="AddAllButton--adding" ng-show="adding"><img src="/static/core/images/loading-small.gif" /> Adding all to cart</span>
+</button>

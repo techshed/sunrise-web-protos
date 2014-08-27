@@ -1,0 +1,31 @@
+<div class="Header hidden-xs">
+
+  <div class="Header-top">
+    <div class="Header-logo pull-left">
+      <a ui-sref="storeFront">
+        <div class="Header-logo-img"></div>
+      </a>
+    </div>
+
+    <%- partial("_header-store-dropdown") %>
+    <%- partial("_header_tools") %>
+    <%- partial("_account-menu") %>
+  </div>
+
+  <div class="Header-bottom">
+
+    <%- partial("_header-category-dropdown") %>
+
+    <div class="Header-search">
+      <div hd-search-field class="search-desktop" data-placeholder="Search Products"></div>
+    </div>
+
+    <div class="Header-cart" ng-click="toggleCart()">
+      <i class="fa fa-shopping-cart"></i>
+      View cart ({{ cartModel.itemCount }})
+    </div>
+    <div hd-cart ng-show="showCart"></div>
+
+  </div>
+
+</div>

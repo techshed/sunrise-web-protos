@@ -1,0 +1,24 @@
+<div class="row Specification" ng-repeat="cols in columns"
+      ng-class="{ 'Specification--alternate': $even }"
+      ng-show="isSpecVisible($index)">
+  <div class="col-sm-6 Specification-leftColumn">
+    <div class="row">
+      <div class="col-xs-6 Specification-label">{{ cols.col1.name }}</div>
+      <div class="col-xs-6 Specification-value">{{ cols.col1.value }}</div>
+    </div>
+  </div>
+  <div class="col-sm-6 Specification-rightColumn">
+    <div class="row" ng-show="cols.col2">
+      <div class="col-xs-6 Specification-label">{{ cols.col2.name }}</div>
+      <div class="col-xs-6 Specification-value">{{ cols.col2.value }}</div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-12 Specification-showMore" ng-hide="showSpecs">
+    <a href="#" ng-click="showAllSpecs()">
+      <i class="glyphicon glyphicon-chevron-down"></i>
+      Show {{ specifications.length - (visibleSpecCount * 2) }} more
+    </a>
+  </div>
+</div>

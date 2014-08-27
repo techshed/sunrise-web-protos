@@ -1,0 +1,46 @@
+<!-- I wished we could have used <details> here -->
+<section class="list-group-item-details">
+
+  <header>
+    <div ng-if="mode == 'ListModeShow'">
+      <h3>{{ list.name }}</h3>
+      <ul class="list-inline">
+        <li>
+          <a ng-click="email()"><i class="fa fa-envelope-o pull-left"></i> Email</a>
+        </li>
+        <li>
+          <a ng-click="print()"><i class="fa fa-print pull-left"></i> Print</a>
+        </li>
+        <li class="pull-right">
+          <a ng-click="remove(list)"><i class="fa fa-trash-o pull-left"></i> Delete</a>
+        </li>
+        <li class="pull-right">
+          <a ng-click="edit()"><i class="fa fa-edit pull-left"></i> Edit</a>
+        </li>
+      </ul>
+    </div>
+    <div ng-if="mode === 'ListModeEdit'">
+      <input class="form-control" type="text" ng-model="list.name" ng-value="list.name">
+    </div>
+  </header>
+
+  <div hd-product-row-list
+    data-products="list.items"
+    data-mode="mode">
+  </div>
+
+  <footer>
+    <div ng-if="mode === 'ListModeShow'">
+      <div add-list-to-cart-button
+        data-products="list.items"
+        data-total="list.subtotal">
+      </div>
+    </div>
+    <div ng-if="mode === 'ListModeEdit'">
+      <button class="btn btn-lg btn-block btn-de-emphasized" ng-click="updateList(list)">Save List</button>
+    </div>
+  </footer>
+
+</section>
+
+<!-- I wished we could have used <details> here -->

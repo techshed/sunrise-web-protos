@@ -1,0 +1,10 @@
+<img class="Product-image" ng-src="{{ selectedImage.large }}" />
+<ul class="clearfix Thumbnails" ng-show="product.images.length > 1">
+  <li class="Thumbnail" ng-repeat="image in product.images">
+    <img class="Thumbnail-image"
+         title="{{ image.type }}"
+         ng-class="{ 'Thumbnail-image--active': isSelectedImage(image) }"
+         ng-click="setSelectedImage(image)"
+         ng-src="{{ image.xsmall }}" />
+  </li>
+</ul>

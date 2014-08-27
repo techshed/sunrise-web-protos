@@ -1,0 +1,37 @@
+<div class="modal-header">
+  <button type="button" class="close" data-dismiss="modal" ng-click="dismiss()">
+    <span aria-hidden="true">&times;</span>
+    <span class="sr-only">Close</span>
+  </button>
+  <h4 class="modal-title">Item is added to <a href="#" ng-click="redirectToList(list)">{{ list.name }}</a></h4>
+</div>
+
+<div class="modal-body ModalAddToList-body">
+  <div class="col-md-4">
+    <div hd-thumbnails class="clearfix"></div>
+  </div>
+  <div class="col-md-8">
+    <span class="ModalAddToList-title">
+        {{ product.brandName }} {{ product.title }}
+      </span>
+    <span class="ModalAddToList-price">
+      {{ product.price || 0 }} /each
+    </span>
+  </div>
+</div>
+
+<div class="modal-footer">
+  <button type="button"
+          class="btn btn-default"
+          data-dismiss="modal"
+          ng-click="redirectToList(list)">
+    View {{ list.name }}
+  </button>
+  <button type="button"
+          class="btn btn-primary"
+          data-dismiss="modal"
+          ng-click="dismiss()">
+    Continue Shopping
+  </button>
+</div>
+

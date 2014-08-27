@@ -1,0 +1,136 @@
+<div class="u-marginKiller">
+
+  <!-- chrome -->
+  <div class="Chrome hidden-xs">
+    <h3 class="Chrome-title">Store Finder</h3>
+  </div>
+
+  <!-- desktop search form -->
+  <form role="form" class="StoreFinderForm hidden-xs clearfix" ng-submit="getStores()" hd-track-form="Store Finder">
+    <div class="StoreFinderForm-input pull-left">
+      <input type="text" class="form-control input-lg" placeholder="enter zipcode..." ng-model="zipcode">
+    </div>
+    <div class="StoreFinderForm-radius pull-left">
+      <select class="form-control input-lg" ng-model="radius">
+        <option ng-repeat="radius in radiusArray" value="{{ radius }}" >{{ radius}} Miles</option>
+      </select>
+    </div>
+    <div class="StoreFinderForm-button pull-left">
+      <button type="button" class="StoreFinderForm-submit btn-block btn btn-lg btn-hd" ng-click="getStores()">
+        Find Stores
+      </button>
+    </div>
+  </form>
+
+  <!-- mobile search form -->
+  <form role="form" class="StoreFinderForm--mobile visible-xs clearfix" ng-submit="getStores()" hd-track-form="Store Finder">
+    <div class="StoreFinderForm-search--mobile">
+      <input type="text" class="form-control" placeholder="enter zipcode..." ng-model="zipcode">
+    </div>
+    <div class="StoreFinderForm-submit--mobile" ng-click="getStores()">
+      <i class="fa fa-location-arrow pull-right"></i>
+    </div>
+  </form>
+
+  <!-- store-finder body -->
+  <div class="StoreFinder-body clearfix">
+
+    <!-- store list -->
+    <ul class="StoreCardList pull-left">
+      <li class="StoreCard" ng-repeat="store in stores" ng-click="showStoreDetails(store)">
+        <div class="StoreCard-marker hidden-xs" ng-show="(store.storeId === visibleStore.storeId)"></div>
+        <div class="StoreCard-title">
+          {{ store.city }} #{{ store.storeId }}
+          <span class="StoreCard-distance">
+            {{ store.distance | number:1 }} miles away
+            <span class="StoreCard-check--mobile" ng-show="(store.storeId === currentStore.storeId)">
+              <i class="fa fa-check"></i>
+              current store
+            </span>
+          </span>
+        </div>
+        <div class="StoreCard-check hidden-xs" ng-show="(store.storeId === currentStore.storeId)">
+          <i class="fa fa-check pull-left"></i>
+          current store
+        </div>
+        <div class="StoreCard-chevron visible-xs">
+          <i class="fa fa-chevron-right"></i>
+        </div>
+      </li>
+    </ul>
+
+    <div class="StoreFinder-details pull-left">
+
+      <!-- map -->
+      <div class="StoreFinder-map hidden-xs">
+        <img class="StoreFinder-mapImage" ng-hide="showDetails" src="http://maps.googleapis.com/maps/api/staticmap?center={{ zipcode }}&zoom=9&size=500x500&scale=2&markers=color:0xf96302%7C{{ markerString }}&key=AIzaSyCWJz86jDLy7S1jYHFptcw2eel9EcBMPT8">
+        <img class="StoreFinder-mapImage" ng-show="showDetails" src="http://maps.googleapis.com/maps/api/staticmap?center={{ visibleStore.lat }},{{ visibleStore.lng }}&zoom=11&size=500x200&scale=2&markers=color:0xf96302%7C{{ visibleStore.zipcode }}&key=AIzaSyCWJz86jDLy7S1jYHFptcw2eel9EcBMPT8">
+      </div>
+
+      <!-- enhanced details -->
+      <div class="StoreDetails" ng-show="showDetails">
+        <div class="clearfix">
+          <div class="StoreDetails-address pull-left">
+            <address>
+              <div class="StoreDetails-addressTitle">
+                {{ visibleStore.name }} #{{ visibleStore.storeId }}
+              </div>
+              {{ visibleStore.streetAddress }}<br>
+              {{ visibleStore.cityAddress }}<br>
+            </address>
+            <div class="StoreDetails-hours">
+              Monday-Saturday: <br>
+              {{ visibleStore.hoursWeek.open }}-{{ visibleStore.hoursWeek.close }}<br>
+              Sunday: <br>
+              {{ visibleStore.hoursSunday.open }}-{{ visibleStore.hoursSunday.close }}
+            </div>
+          </div>
+          <div class="StoreDetails-actions pull-left">
+            <ul class="StoreDetails-actionsList">
+              <li class="StoreDetails-actionsListItem">
+                <i class="fa fa-level-down"></i>
+                <a>Get Directions</a>
+              </li>
+              <li class="StoreDetails-actionsListItem">
+                <i class="fa fa-folder"></i>
+                <a>Store Layout</a>
+              </li>
+              <li class="StoreDetails-actionsListItem">
+                <i class="fa fa-shopping-cart"></i>
+                <a ng-click="setUserStore(visibleStore)">Shop this Store</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- mini chrome -->
+        <div class="Chrome--mini">
+          Services
+        </div>
+
+        <!-- services -->
+        <div class="StoreDetails-services">
+          <ul class="StoreDetails-servicesList">
+            <li ng-repeat="service in visibleStore.services">
+              {{ service }}
+            </li>
+        </div>
+
+        <!-- mini chrome -->
+        <div class="Chrome--mini">
+          Contact Store
+        </div>
+
+        <!-- store contacts -->
+        <div class="StoreDetails-contact" ng-repeat="(role, name) in visibleStore.contacts">
+           <span class="StoreDetails-contactTitle">{{ role }}</span> <br>
+           <span>{{ name }}
+          phone:<a href="tel://{{ visibleStore.phone }}"> {{ visibleStore.phone }}</a>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+

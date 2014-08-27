@@ -1,0 +1,41 @@
+<div class="Chrome row">
+  <div class="Chrome-buttonGroup pull-right btn-group btn-group-sm hidden-xs">
+    <button type="button" class="Chrome-buttonGroup-button btn btn-sm btn-default disabled">
+      <i class="fa fa-chevron-left"></i>
+    </button>
+    <button type="button" class="Chrome-buttonGroup-button btn btn-sm btn-default">
+      <i class="fa fa-chevron-right"></i>
+    </button>
+  </div>
+  <h3 class="Chrome-title">Popular Categories in {{ categoryTitle }}</h3>
+</div>
+
+<div class="CategoryArea row">
+  <div class="CategoryCard col-xs-12 col-md-6"
+       ng-repeat="category in stack | limitTo: 4"
+       ng-class="{ 'visible-xs': $index > 1 }">
+    <div class="row">
+      <div class="CategoryCard-title col-xs-12" ui-sref="category({ categoryId: category.id })">
+        <a class="CategoryCard-link">
+          <img class="CategoryCard-resp-image pull-left visible-xs" src="http://placekitten.com/g/131/131">
+          <i class="fa fa-chevron-right pull-right"></i>
+          <span class="CategoryCard-title-text">{{ category.title }}</span>
+        </a>
+      </div>
+    </div>
+    <div class="CategoryCard-subcategories row hidden-xs">
+      <div class="CategoryCard-image hidden-xs">
+        <img src="http://placekitten.com/g/130/130">
+      </div>
+      <div class="CategoryCard-list-container">
+        <ul class="CategoryCard-list">
+          <li ng-repeat="subcategory in category.subcategories | limitTo:4" ui-sref="category({ categoryId: subcategory.id })">
+            <a class="CategoryCard-link">
+              {{ subcategory.title }}
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
